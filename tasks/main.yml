@@ -1,0 +1,10 @@
+---
+# tasks file for ansible-custom-tor
+- name: Synchronize local source directory of Tor
+  include: sync-tor-dir.yml
+
+- name: Install apt dependencies
+  include: install-apt-deps.yml
+
+- name: make install Tor
+  include: make-tor-from-source.yml

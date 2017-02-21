@@ -1,0 +1,17 @@
+---
+- stat: path="{{ src_dir }}/autogen.sh"
+  register: autogen_sh
+
+- name: Autogen custom Tor if autogen.sh exists (i.e. git clone).
+  command: ./autogen.sh chdir="{{ src_dir }}"
+  when: autogen_sh.stat.exists
+
+- name: Configure custom Tor.
+  command: ./configure --disable-asciidoc chdir="{{ src_dir }}"
+
+- name: Make custom Tor
+  make:
+    target=install
+    chdir="{{ src_dir }}"
+  become: yes
+    

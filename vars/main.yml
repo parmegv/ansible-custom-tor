@@ -1,0 +1,10 @@
+---
+# vars file for ansible-custom-tor
+apt_dependencies:
+  - libssl-dev
+  - openssl
+  - zlib1g-dev
+  - libevent-dev
+  - autoconf
+  - automake
+  - make
