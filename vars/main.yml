@@ -8,3 +8,6 @@ apt_dependencies:
   - autoconf
   - automake
   - make
+
+systemd_unit: "{{ src_dir }}/contrib/dist/tor.service"
+systemd_units_path: "/etc/systemd/system/"

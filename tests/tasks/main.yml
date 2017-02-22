@@ -15,3 +15,13 @@
 - name: Check that tor --version executes correctly
   assert:
     that: "{{ tor_version_output }} in test_fact_tor_version.stdout"
+
+- name: Deactivate Systemd unit
+  systemd:
+    name: tor
+    enabled: no
+
+- name: Activate Systemd unit
+  systemd:
+    name: tor
+    enabled: yes

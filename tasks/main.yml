@@ -8,3 +8,6 @@
 
 - name: make install Tor
   include: make-tor-from-source.yml
+
+- name: Install the Systemd unit
+  include: install-systemd-unit.yml
