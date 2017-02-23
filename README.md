@@ -13,7 +13,9 @@ Ansible version >=2.2
 Role Variables
 --------------
 
-	src_dir: "~/tor" # Directory (both in the local and the remote machines) where the custom Tor sources will are or will be placed
+	tor_dirname: "tor" # Directory name of the Tor sources
+	src_dirpath: "./" # Directory in the local machine where the custom Tor sources are
+	dest_dirpath: "~/" # Directory in the target machine where the custom Tor sources will be placed
 
 Example Playbook
 ----------------
@@ -22,7 +24,7 @@ Including an example of how to use your role (for instance, with variables passe
 
 	- hosts: localhost
 	  roles:
-	  - { role: ansible-custom-tor, src_dir: "./tor" }
+      - { role: ansible-custom-tor, tor_dirname: "tor/", src_dirpath: "./" }
 
 License
 -------
