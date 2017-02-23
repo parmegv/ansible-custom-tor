@@ -8,7 +8,7 @@ Compiles a custom version of Tor synced from the control machine.
 Requirements
 ------------
 
-Ansible, this role has been tested with 2.1.1.0.
+Ansible version >=2.2
 
 Role Variables
 --------------
