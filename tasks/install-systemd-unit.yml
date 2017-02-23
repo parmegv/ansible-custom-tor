@@ -2,8 +2,11 @@
   copy:
     src="{{ systemd_unit }}"
     dest="{{ systemd_units_path }}"
+    remote_src=True
+  become: yes
 
 - name: Activate Systemd unit
   systemd:
     name: tor
     enabled: yes
+  become: yes

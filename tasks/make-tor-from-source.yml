@@ -10,8 +10,10 @@
   command: ./configure --disable-asciidoc chdir="{{ dest_dir }}"
 
 - name: Make custom Tor
+  make: chdir="{{ dest_dir }}"
+  
+- name: Install custom Tor
   make:
-    target=install
-    chdir="{{ dest_dir }}"
+    target: install
+    chdir: "{{ dest_dir }}"
   become: yes
-    
