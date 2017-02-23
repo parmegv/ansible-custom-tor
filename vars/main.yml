@@ -12,5 +12,5 @@ apt_dependencies:
 src_dir: "{{ src_dirpath }}/{{ tor_dirname }}"
 dest_dir: "{{ dest_dirpath }}/{{ tor_dirname }}"
 
-systemd_unit: "{{ src_dir }}/contrib/dist/tor.service"
+systemd_unit: "{{ dest_dir }}/contrib/dist/tor.service"
 systemd_units_path: "/etc/systemd/system/"
