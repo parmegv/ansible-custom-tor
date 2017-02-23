@@ -2,6 +2,6 @@
 - name: Synchronize local source directory of Tor
   synchronize:
     src: "{{ src_dir }}" # Source host
-    dest: "{{ src_dir }}" # Destination host
+    dest: "{{ dest_dir }}" # Destination host
     delete: yes # delete files in dest on the remote host that are not found in src of localhost.
     copy_links: yes

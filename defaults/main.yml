@@ -1,3 +1,4 @@
 ---
 # defaults file for ansible-custom-tor
-src_dir: "./tor" # Directory (both in the local and the remote machines) where the custom Tor sources will are or will be placed
+src_dir: "./tor" # Directory in the local machine where the custom Tor sources are or will be placed
+dest_dir: "~/" # Directory in the remote machines where the custom Tor sources will be placed
