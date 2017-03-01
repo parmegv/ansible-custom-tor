@@ -12,7 +12,7 @@
 - name: Make custom Tor
   make:
     chdir: "{{ dest_dir }}"
-    NUM_THREADS: {{ ansible_processor_vcpus }}
+    NUM_THREADS: "{{ ansible_processor_vcpus }}"
 - name: Install custom Tor
   make:
     target: install
