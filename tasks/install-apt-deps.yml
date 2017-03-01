@@ -6,3 +6,12 @@
     update_cache: yes
   with_items: "{{ apt_dependencies }}"
   become: yes
+
+- name: Install role apt dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  with_items: "{{ role_apt_dependencies }}"
+  become: yes
+

@@ -9,6 +9,9 @@ apt_dependencies:
   - automake
   - make
 
+role_apt_dependencies:
+  - rsync
+
 src_dir: "{{ src_dirpath }}/{{ tor_dirname }}"
 dest_dir: "{{ dest_dirpath }}/{{ tor_dirname }}"
 
