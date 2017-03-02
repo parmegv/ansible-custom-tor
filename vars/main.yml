@@ -1,6 +1,6 @@
 ---
 # vars file for ansible-custom-tor
-apt_dependencies:
+custom_tor_apt_dependencies:
   - libssl-dev
   - openssl
   - zlib1g-dev
@@ -9,11 +9,11 @@ apt_dependencies:
   - automake
   - make
 
-role_apt_dependencies:
+custom_tor_role_apt_dependencies:
   - rsync
 
-src_dir: "{{ src_dirpath }}/{{ tor_dirname }}"
-dest_dir: "{{ dest_dirpath }}/{{ tor_dirname }}"
+custom_tor_src_dir: "{{ custom_tor_src_dirpath }}/{{ custom_tor_dirname }}"
+custom_tor_dest_dir: "{{ custom_tor_dest_dirpath }}/{{ custom_tor_dirname }}"
 
-systemd_unit: "{{ dest_dir }}/contrib/dist/tor.service"
-systemd_units_path: "/etc/systemd/system/"
+custom_tor_systemd_unit: "{{ custom_tor_dest_dir }}/contrib/dist/tor.service"
+custom_tor_systemd_units_path: "/etc/systemd/system/"
