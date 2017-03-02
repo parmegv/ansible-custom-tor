@@ -1,22 +1,22 @@
 ---
-- stat: path="{{ dest_dir }}/autogen.sh"
+- stat: path="{{ custom_tor_dest_dir }}/autogen.sh"
   register: autogen_sh
 
 - name: Autogen custom Tor if autogen.sh exists (i.e. git clone).
-  command: ./autogen.sh chdir="{{ dest_dir }}"
+  command: ./autogen.sh chdir="{{ custom_tor_dest_dir }}"
   when: autogen_sh.stat.exists
 
 - name: Configure custom Tor.
-  command: ./configure --disable-asciidoc chdir="{{ dest_dir }}"
+  command: ./configure --disable-asciidoc chdir="{{ custom_tor_dest_dir }}"
 
 - name: Make custom Tor
   make:
-    chdir: "{{ dest_dir }}"
+    chdir: "{{ custom_tor_dest_dir }}"
     params:
       NUM_THREADS: "{{ ansible_processor_vcpus }}"
 
 - name: Install custom Tor
   make:
     target: install
-    chdir: "{{ dest_dir }}"
+    chdir: "{{ custom_tor_dest_dir }}"
   become: yes

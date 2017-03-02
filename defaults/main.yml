@@ -1,5 +1,5 @@
 ---
 # defaults file for ansible-custom-tor
-tor_dirname: "tor" # Directory name of the Tor sources
-src_dirpath: "./" # Directory in the local machine where the custom Tor sources are
-dest_dirpath: "/tmp" # Absolute path to the directory from the target machine where the custom Tor sources will be placed
+custom_tor_dirname: "tor" # Directory name of the Tor sources
+custom_tor_src_dirpath: "./" # Directory in the local machine where the custom Tor sources are
+custom_tor_dest_dirpath: "/tmp" # Absolute path to the directory from the target machine where the custom Tor sources will be placed
