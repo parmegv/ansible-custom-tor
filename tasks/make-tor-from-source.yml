@@ -3,11 +3,18 @@
   register: autogen_sh
 
 - name: Autogen custom Tor if autogen.sh exists (i.e. git clone).
-  command: ./autogen.sh chdir="{{ custom_tor_dest_dir }}"
+  command: ./autogen.sh
+  args:
+    chdir: "{{ custom_tor_dest_dir }}"
+    creates: "{{ custom_tor_dest_dir }}/configure"
   when: autogen_sh.stat.exists
 
 - name: Configure custom Tor.
-  command: ./configure --disable-asciidoc chdir="{{ custom_tor_dest_dir }}"
+  command:
+    ./configure --disable-asciidoc
+  args:
+    chdir: "{{ custom_tor_dest_dir }}"
+    creates: "{{ custom_tor_dest_dir }}/Makefile"
 
 - name: Make custom Tor
   make:
