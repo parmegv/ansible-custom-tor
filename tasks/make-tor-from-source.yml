@@ -6,7 +6,6 @@
   command: ./autogen.sh
   args:
     chdir: "{{ custom_tor_dest_dir }}"
-    creates: "{{ custom_tor_dest_dir }}/configure"
   when: autogen_sh.stat.exists
 
 - name: Configure custom Tor.
