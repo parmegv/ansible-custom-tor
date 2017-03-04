@@ -26,3 +26,8 @@
     target: install
     chdir: "{{ custom_tor_dest_dir }}"
   become: yes
+
+- name: Make tor.service
+  make:
+    target: dist
+    chdir: "{{ custom_tor_dest_dir }}"

@@ -1,7 +1,7 @@
 - name: Copy Systemd unit to the system path
   copy:
     src="{{ custom_tor_systemd_unit }}"
-    dest="{{ custom_tor_systemd_units_path }}"
+    dest="{{ custom_tor_systemd_unit_remote_path }}"
     remote_src=True
   become: yes
 
