@@ -1,6 +1,6 @@
 - name: Make sure the user directory for systemd units exists
   file:
-    path: "{{ custom_tor_systemd_unit_remote_path }}"
+    path: "{{ custom_tor_systemd_units_path }}"
     state: directory
 
 - name: Copy Systemd unit to the system path
