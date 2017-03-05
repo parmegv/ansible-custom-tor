@@ -3,5 +3,4 @@
   synchronize:
     src: "{{ custom_tor_src_dir }}/" # Source host
     dest: "{{ custom_tor_dest_dir }}/" # Destination host
-    delete: yes # delete files in dest on the remote host that are not found in src of localhost.
     copy_links: no
