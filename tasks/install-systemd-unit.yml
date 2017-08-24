@@ -8,8 +8,7 @@
     src="{{ custom_tor_systemd_unit }}"
     dest="{{ custom_tor_systemd_unit_remote_path }}"
     remote_src=True
-  become: yes
-
+    
 - name: Remove hardening section from the Systemd unit
   lineinfile:
     regexp: "^[(Private)|(Protect)|(Read)|(Capability)].*$"

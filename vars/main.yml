@@ -17,5 +17,5 @@ custom_tor_src_dir: "{{ custom_tor_src_dirpath }}/{{ custom_tor_dirname }}"
 custom_tor_dest_dir: "{{ custom_tor_dest_dirpath }}/{{ custom_tor_dirname }}"
 
 custom_tor_systemd_unit: "{{ custom_tor_dest_dir }}/contrib/dist/tor.service"
-custom_tor_systemd_units_path: "~{{ ansible_user }}/.config/systemd/user"
+custom_tor_systemd_units_path: "~{{ ansible_user| default(lookup('env', 'USER')) }}/.config/systemd/user"
 custom_tor_systemd_unit_remote_path: "{{ custom_tor_systemd_units_path }}/tor.service"
